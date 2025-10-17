@@ -4,11 +4,19 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AuthController::class, 'showLogin'])->name('login');
+// Homepage - Customer Catalog 
+Route::get('/', function () {
+    return view('customer.catalog');
+})->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/equipment', function () {
+    return view('admin.equipment');
+})->middleware(['auth', 'verified'])->name('equipment');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -18,7 +26,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Auth routes
-Route::get('/login', [AuthController::class, 'showLogin']);
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
