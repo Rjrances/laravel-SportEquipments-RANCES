@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Captrack Sports Equipment') }}</title>
+    <title>{{ config('app.name', 'EquipX Sports Equipment') }}</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <meta name="theme-color" content="#dc2626">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -21,10 +25,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
-                        <!-- Captrack Logo -->
+                        <!-- EquipX Logo -->
                         <div class="flex-shrink-0 flex items-center">
-                            <img class="h-8 w-auto" src="{{ asset('pictures/Logo.png') }}" alt="Captrack">
-                            <span class="ml-3 text-xl font-bold text-red-800">Captrack</span>
+                            <img class="h-8 w-auto" src="{{ asset('pictures/Logo.png') }}" alt="EquipX">
+                            <span class="ml-3 text-xl font-bold text-red-800">EquipX</span>
                         </div>
                         
                         <!-- Navigation Links -->
@@ -64,7 +68,6 @@
                                  x-transition:leave-start="transform opacity-100 scale-100"
                                  x-transition:leave-end="transform opacity-0 scale-95"
                                  class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                                <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">

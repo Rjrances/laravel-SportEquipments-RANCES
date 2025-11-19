@@ -1,0 +1,22 @@
+{
+  "name": "Laravel - Equipment Catalog",
+  "short_name": "EX",
+  "description": "Sports Equipment Catalog",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/pictures/Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pictures/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
