@@ -17,17 +17,22 @@ class EnsureUserIsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         $user = Auth::user();
-        
-        // Check if user is authenticated
+        // Check User is Authenticated
         if (!$user) {
-            return redirect()->route('login');
+            return $request->expectsJson()
+                ? response()->json(['message' => 'Unauthenticated.'], 401)
+                : redirect()->route('login');
         }
-        
-        // Check if user is admin
+
+        // Check User is Admin
         if (!($user->is_admin ?? false)) {
-            abort(403, 'Access denied.');
+            if ($request->expectsJson()) {
+                return response()->json(['message' => 'Forbidden'], 403);
+            }
+
+            return response()->view('errors.403', [], 403);
         }
-        
+
         return $next($request);
     }
 }

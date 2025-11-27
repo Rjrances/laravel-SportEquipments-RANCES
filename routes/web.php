@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-// Homepage - Customer Catalog 
+// Home - Customer Catalog 
 Route::get('/', function () {
     return view('customer.catalog');
 })->name('home');
