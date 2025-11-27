@@ -10,11 +10,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'admin'])->name('dashboard');
 
 Route::get('/equipment', function () {
     return view('admin.equipment');
-})->middleware(['auth', 'verified'])->name('equipment');
+})->middleware(['auth', 'admin'])->name('equipment');
 
 
 Route::middleware('auth')->group(function () {

@@ -48,7 +48,7 @@
                     <!-- Login Button -->
                     <div class="flex items-center space-x-4">
                         <a href="{{ route('login') }}" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors duration-200">
-                            Staff Login
+                            Login
                         </a>
                     </div>
                 </div>

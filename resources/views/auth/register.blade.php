@@ -7,8 +7,8 @@
                 <span class="text-xl font-semibold">EquipX</span>
             </div>
             <div>
-                <div class="text-4xl font-extrabold leading-tight">Join<br>EquipX</div>
-                <p class="mt-4 text-white/85 max-w-md">Create an account to unlock premium gear and exclusive deals.</p>
+                <div class="text-4xl font-extrabold leading-tight">Join<br>EquipX Staff</div>
+                <p class="mt-4 text-white/85 max-w-md">Register for staff/admin access to manage equipment inventory.</p>
             </div>
             <div class="text-xs text-white/70">© {{ date('Y') }} EquipX. All rights reserved.</div>
         </div>
@@ -30,8 +30,8 @@
                 </a>
             </div>
             
-            <h2 class="text-2xl font-semibold text-gray-900">Create your account</h2>
-            <p class="text-sm text-gray-500 mb-6">Have an account? <a href="{{ route('login') }}" class="text-red-600 hover:underline">Sign in</a></p>
+            <h2 class="text-2xl font-semibold text-gray-900">Staff Registration</h2>
+            <p class="text-sm text-gray-500 mb-6">Register for staff/admin access. Have an account? <a href="{{ route('login') }}" class="text-red-600 hover:underline">Sign in</a></p>
 
             <form method="POST" action="{{ route('register') }}" class="space-y-4">
                 @csrf

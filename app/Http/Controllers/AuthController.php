@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Authorization;
+use App\Models\Registration;
 
 class AuthController extends Controller
 {
@@ -52,9 +54,20 @@ class AuthController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
+            'is_admin' => true, 
         ]);
 
-        // Do not auto-login; send user to the login page with a success message
+        Registration::create([
+            'user_id' => $user->id,
+            'registered_at' => now(),
+            'status' => 'completed',
+        ]);
+
+        Authorization::create([
+            'user_id' => $user->id,
+            'role' => $user->is_admin ? 'admin' : 'user',
+        ]);
+
         return redirect()->route('login')->with('status', 'Account created successfully. Please log in.');
     }
 

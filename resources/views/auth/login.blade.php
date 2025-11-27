@@ -7,8 +7,8 @@
                 <span class="text-xl font-semibold">EquipX</span>
             </div>
             <div>
-                <div class="text-4xl font-extrabold leading-tight">Hello<br>EquipX!</div>
-                <p class="mt-4 text-white/85 max-w-md">Power your game with premium gear. Built for strength, speed, and performance.</p>
+                <div class="text-4xl font-extrabold leading-tight">Hello<br>EquipX Staff!</div>
+                <p class="mt-4 text-white/85 max-w-md">Login to manage equipment inventory and access the admin dashboard.</p>
             </div>
             <div class="text-xs text-white/70">© {{ date('Y') }} EquipX. All rights reserved.</div>
         </div>
@@ -30,8 +30,8 @@
                 </a>
             </div>
             
-            <h2 class="text-2xl font-semibold text-gray-900">Welcome Back!</h2>
-            <p class="text-sm text-gray-500 mb-6">Don’t have an account? <a href="{{ route('register') }}" class="text-red-600 hover:underline">Create one</a></p>
+            <h2 class="text-2xl font-semibold text-gray-900">Staff Login</h2>
+            <p class="text-sm text-gray-500 mb-6">Login for staff/admin access. Don't have an account? <a href="{{ route('register') }}" class="text-red-600 hover:underline">Register</a></p>
 
             @if (session('status'))
                 <div class="mb-4 text-sm text-green-700">{{ session('status') }}</div>
